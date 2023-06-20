@@ -9,30 +9,36 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>New York</h1>
-        <ul>
-          <li>Friday</li>
-          <li>Cloudy</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="cloudy"
-            />
-            76
-          </div>
-          <div class="col-6">
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+            <h1 id="city"></h1>
             <ul>
-              <li>Prceipitation</li>
-              <li>Humididty</li>
-              <li>Wind</li>
+              <li id="date"></li>
+              <li id="description"></li>
             </ul>
           </div>
+          <div class="row">
+            <div class="left">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="cloudy"
+                id="icon"
+                class="emoji"
+              />
+              <div class="temp" id="temperature"></div>
+              <span class="units">F | <a href="#">C</a></span>
+            </div>
+            <div class="right">
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span>mph</li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <small> <a href="#">Open-source code</a> by Brooklyn Van Bebber</small>
       </div>
-      <small> Open-source code by Brooklyn Van Bebber</small>
     </div>
     <script src="app.js"></script>
   </body>
