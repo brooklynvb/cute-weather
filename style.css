@@ -79,3 +79,11 @@ li::first-letter {
 .overview {
   margin-bottom: 20px;
 }
+.left .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.left .active:hover {
+  text-decoration: none;
+}
