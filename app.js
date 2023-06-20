@@ -37,7 +37,18 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.icon);
 }
 
-let apiKey = "58ba5tfa5efecdeee334f3576a01o002";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Aiken&key=${apiKey}&units=imperial`;
+function search(city) {
+  let apiKey = "58ba5tfa5efecdeee334f3576a01o002";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-text-input");
+  search(cityInputElement.value);
+  console.log(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
