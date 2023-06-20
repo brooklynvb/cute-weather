@@ -42,7 +42,8 @@ li::first-letter {
 
 .emoji {
   float: left;
-  margin-right: 10px;
+  width: 70px;
+  margin-top: -8px;
 }
 .temp {
   float: left;
