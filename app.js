@@ -16,6 +16,52 @@ function formatDate(timestamp) {
 }
 function displayForecast(response) {
   console.log(response.data.daily);
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-1">
+              <div class="weather-forecast-date">${day}</div>
+
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1555/1555512.png"
+                alt=""
+                width="36"
+              />
+
+              <div class="weather-forecast-temp">
+                <span class="weather-forecast-temp-max">18</span
+                ><span class="weather-forecast-temp-min"> 12</span>
+              </div>
+            </div>
+          `;
+  });
+
+  forecastHTML =
+    forecastHTML +
+    `
+            <div class="col-1">
+              <div class="weather-forecast-date">Day</div>
+
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1555/1555512.png"
+                alt=""
+                width="36"
+              />
+
+              <div class="weather-forecast-temp">
+                <span class="weather-forecast-temp-max">18</span
+                ><span class="weather-forecast-temp-min"> 12</span>
+              </div>
+            </div>
+          </div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function getForecast(coordinates) {
