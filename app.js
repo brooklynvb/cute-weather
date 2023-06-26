@@ -14,6 +14,17 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}: ${minutes}`;
 }
+function displayForecast(response) {
+  console.log(response.data.daily);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "58ba5tfa5efecdeee334f3576a01o002";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayTemperature(response) {
   console.log(response.data);
@@ -38,6 +49,8 @@ function displayTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.icon);
+
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {

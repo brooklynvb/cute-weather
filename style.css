@@ -87,3 +87,43 @@ li::first-letter {
 .left .active:hover {
   text-decoration: none;
 }
+
+.day-1 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.6;
+}
+.weather-forecast-temp-min {
+  opacity: 0.5;
+}
+.weather-forecast-temp {
+  font-size: 13px;
+}
+.day-1 {
+  display: inline-block;
+  width: 15%px;
+}
+.day-2 {
+  display: inline-block;
+  width: 15%;
+}
+.day-3 {
+  display: inline-block;
+  width: 15%px;
+}
+.day-4 {
+  display: inline-block;
+  width: 15%;
+}
+.day-5 {
+  display: inline-block;
+  width: 15%px;
+}
+.day-6 {
+  display: inline-block;
+  width: 15%;
+}
