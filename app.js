@@ -14,52 +14,51 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}: ${minutes}`;
 }
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  return days[day];
+}
 function displayForecast(response) {
   console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-1">
-              <div class="weather-forecast-date">${day}</div>
+              <div class="weather-forecast-date">${formatDay(
+                forecastDay.time
+              )}</div>
 
               <img
-                src="https://cdn-icons-png.flaticon.com/512/1555/1555512.png"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  forecastDay.condition.icon
+                }.png"
                 alt=""
                 width="36"
               />
 
               <div class="weather-forecast-temp">
-                <span class="weather-forecast-temp-max">18</span
-                ><span class="weather-forecast-temp-min"> 12</span>
+                <span class="weather-forecast-temp-max">${Math.round(
+                  forecastDay.temperature.maximum
+                )}</span
+                ><span class="weather-forecast-temp-min">${Math.round(
+                  forecastDay.temperature.minimum
+                )}</span>
               </div>
             </div>
           `;
+    }
   });
 
-  forecastHTML =
-    forecastHTML +
-    `
-            <div class="col-1">
-              <div class="weather-forecast-date">Day</div>
-
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/1555/1555512.png"
-                alt=""
-                width="36"
-              />
-
-              <div class="weather-forecast-temp">
-                <span class="weather-forecast-temp-max">18</span
-                ><span class="weather-forecast-temp-min"> 12</span>
-              </div>
-            </div>
-          </div>`;
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
