@@ -1,17 +1,19 @@
 body {
-  background-color: #fdffcd;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/088/626/original/15847173_v957-nunny-16.jpg?1688673156");
+  background-color: #cccccc;
 }
 
 .weather-app-wrapper {
   max-width: 600px;
   margin: 0 auto;
+  margin-top: 50px;
 }
 
 .weather-app {
   padding: 20px;
-  border: 1px solid black;
+  border: 1px solid #71a0a5;
   border-radius: 10px;
-  background-color: #ffebbb;
+  background-color: #acc6aa;
 }
 h1 {
   color: black;
@@ -25,20 +27,22 @@ h1 {
 }
 h2 {
   display: inline;
+  font-family: "Courier New", Courier, monospace;
   font-size: 10px;
   text-align: right;
   padding: 0px 0px 0px 0px;
 }
 input[type="text"] {
-  border: 1px solid black;
+  border: 1px solid #71a0a5;
   padding: 5px;
+  border-radius: 10px;
 }
 input[type="submit"] {
   color: black;
-  background-color: #e0ffcd;
-  border-radius: 20%;
+  background-color: #71a0a5;
+  border-radius: 10px;
   border: solid thin;
-  border-color: #c6e0b5;
+  border-color: #71a0a5;
   padding: 5px;
 }
 form {
@@ -49,6 +53,7 @@ ul {
   padding: 0;
 }
 li {
+  font-family: "Courier New", Courier, monospace;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -71,13 +76,15 @@ li::first-letter {
   margin-top: -8px;
 }
 .temp {
+  font-family: "Courier New", Courier, monospace;
   float: left;
   font-size: 55px;
   line-height: 1;
   font-weight: 400px;
-  margin-right: 5px;
+  margin-right: 0px;
 }
 .units {
+  font-family: "Courier New", Courier, monospace;
   position: relative;
   font-size: 16px;
 }
@@ -102,6 +109,7 @@ li::first-letter {
 }
 .weather-forecast-temp {
   font-size: 13px;
+  font-family: "Courier New", Courier, monospace;
 }
 .row {
   display: flex;
@@ -114,4 +122,12 @@ li::first-letter {
   margin: 0;
   float: left;
   width: 15%;
+  font-family: "Courier New", Courier, monospace;
+}
+a {
+  color: #77628c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }

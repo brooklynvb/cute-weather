@@ -29,7 +29,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 7) {
       forecastHTML =
         forecastHTML +
         `
@@ -49,7 +49,7 @@ function displayForecast(response) {
               <div class="weather-forecast-temp">
                 <span class="weather-forecast-temp-max">${Math.round(
                   forecastDay.temperature.maximum
-                )}° | </span
+                )}°|</span
                 ><span class="weather-forecast-temp-min">${Math.round(
                   forecastDay.temperature.minimum
                 )}°</span>
@@ -138,3 +138,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Aiken");
